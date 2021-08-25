@@ -1,3 +1,11 @@
-<p>{{length}} item{{length > 1 ? 's' : ''}}</p>
-<button *ngFor="let btn of filterButtons" [ngClass]="{active: btn.isActive}">{{btn.label}}</button>
-<button class="clear-completed-btn" >Clear</button>
+<p>{{ length }} item{{ length > 1 ? "s" : "" }}</p>
+<button *ngFor="let btn of filterButtons" [ngClass]="{ active: btn.isActive }" (click)="filter(btn.type)">
+  {{ btn.label }}
+</button>
+<button
+  class="clear-completed-btn"
+  [ngClass]="{ visible: hasComplete$ | async }"
+  (click)="clearCompleted()"
+>
+  Clear
+</button>

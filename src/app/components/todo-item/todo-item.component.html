@@ -7,7 +7,7 @@
       [checked]="todo.isCompleted"
       (change)="changeTodoStatus()"
     />
-    <label [for]="todo.id">{{ todo.content }}</label>
+    <label [for]="todo.id" [ngClass]="{'line-through': todo.isCompleted}" >{{ todo.content }}</label>
     <div style="display: inline; margin-left: 16px">
       <span
         [ngClass]="{ active: isHovered }"
