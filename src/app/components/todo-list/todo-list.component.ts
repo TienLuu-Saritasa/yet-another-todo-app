@@ -15,7 +15,12 @@ export class TodoListComponent implements OnInit {
   ngOnInit(): void {
     this.todos$ = this.todoService.todos$;
   }
-
+  onEditTodo(todo: Todo) {
+    this.todoService.editTodo(todo.id, todo.content);
+  }
+  onDeleteTodo(todo:Todo) {
+    this.todoService.deleteTodo(todo.id);
+  }
   onChangeTodoStatus(todo: Todo) {
     this.todoService.changeTodoStatus(todo.id, todo.isCompleted);
   }

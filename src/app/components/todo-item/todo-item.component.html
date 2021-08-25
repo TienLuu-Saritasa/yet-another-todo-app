@@ -9,16 +9,19 @@
     />
     <label [for]="todo.id">{{ todo.content }}</label>
     <div style="display: inline; margin-left: 16px">
-      <span [ngClass]="{ active: isHovered }" (click)="isEditing = true"
+      <span
+        [ngClass]="{ active: isHovered }"
+        (click)="isEditing = true"
+        [hidden]="todo.isCompleted"
         >Edit</span
       >
-      <span style="margin-left: 8px" [ngClass]="{ active: isHovered }"
+      <span style="margin-left: 8px" [ngClass]="{ active: isHovered }" (click)="onDelete()"
         >Close</span
       >
     </div>
   </div>
 
-  <form action="" *ngIf="isEditing">
-    <input type="text" />
+  <form *ngIf="isEditing" (keyup)="onSubmit($event)">
+    <input type="text" [(ngModel)]="todo.content" name="editTodo" />
   </form>
 </div>
