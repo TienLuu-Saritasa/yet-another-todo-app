@@ -1,0 +1,9 @@
+.active {
+  color: green;
+}
+.clear-completed-btn {
+  visibility: visible;
+  &.visible {
+    visibility: visible;
+  }
+}

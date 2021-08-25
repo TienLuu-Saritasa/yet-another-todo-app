@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./todo-item.component.scss']
 })
 export class TodoItemComponent implements OnInit {
-
+  isHovered = false;
+  isEditing = false;
   constructor() { }
 
   ngOnInit(): void {

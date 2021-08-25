@@ -1,1 +1,14 @@
-<p>todo-item works!</p>
+<div (mouseover)="isHovered = true" (mouseover)="isHovered = false">
+  <div>
+    <input type="checkbox" name="" id="">
+    <label for="">Todo item</label>
+    <div style="display: inline; margin-left: 16px;" >
+      <span  [ngClass]="{'active': isHovered}" (click)="isEditing = true">Edit</span>
+      <span style="margin-left: 8px;"  [ngClass]="{'active': isHovered}">Close</span>
+    </div>
+  </div>
+  
+  <form action="" *ngIf="isEditing">
+    <input type="text">
+  </form>
+</div>

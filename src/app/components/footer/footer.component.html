@@ -1,1 +1,3 @@
-<p>footer works!</p>
+<p>{{length}} item{{length > 1 ? 's' : ''}}</p>
+<button *ngFor="let btn of filterButtons" [ngClass]="{active: btn.isActive}">{{btn.label}}</button>
+<button class="clear-completed-btn" >Clear</button>
